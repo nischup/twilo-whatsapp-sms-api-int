@@ -1,0 +1,13 @@
+1. Install Laravel Twilio SDK============
+
+composer require twilio/sdk
+
+2. Add Twilio Credentials in .env==========
+
+TWILIO_SID=your_account_sid
+TWILIO_AUTH_TOKEN=your_auth_token
+TWILIO_WHATSAPP_NUMBER=whatsapp:+1234567890
+
+3. Create a Twilio Service in Laravel=================
+
+
