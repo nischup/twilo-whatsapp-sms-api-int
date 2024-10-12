@@ -16,7 +16,8 @@ class WhatsAppController extends Controller
 
     public function sendMessage(Request $request)
     {
-        $recipient = $request->input('recipient'); // Expected format: +1234567890
+        // $recipient = $request->input('recipient'); // Expected format: +1234567890
+        $recipient = +8801843174438; 
         $message = $request->input('message');
 
         if ($this->twilioService->sendWhatsAppMessage($recipient, $message)) {
