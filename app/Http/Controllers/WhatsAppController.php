@@ -17,14 +17,16 @@ class WhatsAppController extends Controller
 
     public function sendMessage(Request $request)
     {
+        // dd($request->all());
         $account_sid = env('TWILIO_SID');  // Your Twilio SID
         $auth_token = env('TWILIO_AUTH_TOKEN');  // Your Twilio Auth Token
         $twilio_number = env('TWILIO_WHATSAPP_NUMBER');  // Your Twilio WhatsApp Number
 
         $client = new Client($account_sid, $auth_token);
 
-        $recipient = '+8801843174438'; 
-        $message = 'whats sms or message sent test';
+        $recipient = $request->input('number');
+        // $recipient = '+8801843174438'; 
+        $message = 'sandbox sms test for twilo';
 
         try {
             $client->messages->create(

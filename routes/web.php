@@ -19,5 +19,5 @@ Route::get('/', function () {
 });
 
 
-Route::post('/send-whatsapp', [WhatsAppController::class, 'sendMessage']);
+Route::post('/send-whatsapp', [WhatsAppController::class, 'sendMessage'])->name('send-whatsapp-sms');
 
