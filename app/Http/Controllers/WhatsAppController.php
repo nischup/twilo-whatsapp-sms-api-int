@@ -25,14 +25,14 @@ class WhatsAppController extends Controller
         $client = new Client($account_sid, $auth_token);
 
         $recipient = $request->input('number');
-        // $recipient = '+8801843174438'; 
-        $message = 'sandbox sms test for twilo';
+        // $recipient = '+8801686844781'; 
+        $message = 'very happy to send sandbox account';
 
         try {
             $client->messages->create(
-                "whatsapp:$recipient",  // Recipient's WhatsApp number
+                "whatsapp:".$recipient,  // to Recipient's WhatsApp number
                 [
-                    'from' => "whatsapp:$twilio_number",
+                    'from' => $twilio_number,
                     'body' => $message
                 ]
             );
